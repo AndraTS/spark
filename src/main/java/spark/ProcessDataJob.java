@@ -18,10 +18,6 @@ public class ProcessDataJob {
 		
 		System.out.println("Hello Spark!");
 
-		// test call
-		Condition c = new Condition();
-		c.readOntology();
-		
 		SparkConf conf = new SparkConf().setAppName("spark").setMaster("local");
 		JavaStreamingContext context = new JavaStreamingContext(conf, Durations.seconds(10));
 		JavaDStream<String> linesDStream = context.textFileStream("/home/andra/workspace/spark/Data");
